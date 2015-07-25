@@ -1,0 +1,18 @@
+.col-md-1
+	%h1 Een nieuwe competentie aanmaken
+	= form_for :competency do |f|
+		%p
+			= f.label :title
+			= f.text_field :title
+
+		%p
+			= f.label :text
+			= f.text_area :text
+
+		/ %p
+		/ 	= f.options_from_collection_for_select(Competency.all, :id, :name)
+
+		%p 
+			= f.submit
+
+	= link_to "Terug naar het competentie overzicht", competencies_path, class: 'btn btn-primary'
